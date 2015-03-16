@@ -1,0 +1,17 @@
+Distrace (Distance + Trace)
+
+A path tracer for rendering extremely large scenes using an octree.
+
+The tracing-optimized octree is compiled and stored on disk and memory-mapped.
+This structure is specific to the architecture and version of the software, as it's
+native structures in memory.  Instead of pointers, offsets into the file are used.
+Very large scenes may therefore require a 64-bit processor.
+
+Candidate for 'pointer' format:
+<16-bit size> <48-bit address, ignoring lowest 4 bits>
+
+All structures will be 128-bit aligned; therefore we can ignore the
+lowest 4 bits of object addresses and they can be used for flags, and
+the address can be gleaned just by ANDing with 0x0000FFFFFFFFFFF0.
+
+128 bits = 16 bytes = 4 bits of address
