@@ -1,1 +1,4 @@
+*.class
+*.o
 file.dat
+writefloat
