@@ -1,7 +1,7 @@
 default: \
-	write-read-floats
+	run-mmap-test
 
-run-mmap: mmap.d
+run-mmap-test: mmap.d
 	echo 'Hello, world!' >file.dat
 	./mmap.d
 
@@ -10,6 +10,3 @@ run-mmap: mmap.d
 
 %.class: %.java
 	javac "$<"
-
-write-read-floats: writefloat FloatReader.class
-	./writefloat | java FloatReader 
