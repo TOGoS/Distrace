@@ -10,3 +10,6 @@ run-mmap-test: mmap.d
 
 %.class: %.java
 	javac "$<"
+
+demo:
+	./trace.d | hdrutil -follow-trace-dump
