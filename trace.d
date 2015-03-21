@@ -17,6 +17,22 @@ struct OffDir {
     Vector3D direction;
 };
 
+struct Volume {
+    real minX, minY, minZ, maxX, maxY, maxZ;
+};
+
+struct IntersectionResult {
+    // TODO: before, at, past points
+};
+
+IntersectionResult findIntersection( Volume vol, OffDir pos ) {
+    // TODO:
+    // Scale = infinity
+    // For each X, Y, Z:
+    //   Too long?  Shrink scale to match distance to border in $direction
+    return IntersectionResult();
+};
+
 /**
  * Transforms a screen position to a vector
  */
