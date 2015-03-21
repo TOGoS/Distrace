@@ -38,7 +38,7 @@ class MMapped {
     }
     
     void *at(long offset) {
-        if( offset > end-begin ) {
+        if( begin + offset > end ) {
             return null;
         } else {
             return begin + offset;
